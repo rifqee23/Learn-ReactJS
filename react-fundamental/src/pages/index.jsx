@@ -19,7 +19,11 @@ function Homepage() {
             .then(response => response.json())
             .then(json => setExternalPosts(json));
             
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        console.log("ada posts baru");
+    }, [posts])
     
     return(
         <>
