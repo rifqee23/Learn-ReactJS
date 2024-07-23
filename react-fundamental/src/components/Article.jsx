@@ -1,4 +1,6 @@
 import '../App.css'
+import { useContext } from 'react';
+import { GlobalContext } from '../context';
 
 // component article status
 const ArticleStatus = (({ isNew }) => (isNew && <span>-- Baru !!</span> ));
@@ -7,6 +9,7 @@ const ArticleStatus = (({ isNew }) => (isNew && <span>-- Baru !!</span> ));
 const NewArticle = () => (<span> -- Baru !!!</span>)
 
 function Article(props) {
+    const user = useContext(GlobalContext);
     
     return (
         <>
@@ -15,9 +18,12 @@ function Article(props) {
                 Date : {props.date}, tags : {props.tags.join(", ")} 
                 {/* {props.isNew ? " --Baru " : "lama"} */}
                 {/* {props.isNew && " --Baru "} */} 
-                {/* <ArticleStatus isNew={props.isNew} /> */} {/*Pengecekan didalam component*/}
-                {props.isNew && <NewArticle />} {/*Pengecekan diluar component*/}
+                <ArticleStatus isNew={props.isNew} /> {/*Pengecekan didalam component*/}
+                {/* {props.isNew && <NewArticle />} Pengecekan diluar component */}
             </small>
+            <div>
+                <small>Ditulis oleh {user.username}</small>
+            </div>
             
         </>
     )
