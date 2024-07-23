@@ -4,13 +4,13 @@ function Search(props) {
 
     const onSearchChange = (event) => {
         setSearch(event.target.value);
-        props.onSearchChange(event.target.value);
+        props.onSearchChange(event.target.value); // untuk mengirim element child ke parent class
     }
 
     return (
         <>
             <div>Cari Artikel : <input type="search" name="search" id="search" onChange={onSearchChange} /></div>
-            <small>Ditemukan 0 kata dengan pencarian kata {search}</small>
+            <small>Ditemukan {props.totalPosts} kata dengan pencarian kata {search}</small>
         </>
     )
 }
