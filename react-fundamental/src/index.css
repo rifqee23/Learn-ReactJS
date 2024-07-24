@@ -35,6 +35,17 @@ h1 {
   line-height: 1.1;
 }
 
+.bgError {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(404.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 button:hover {
   border-color: #646cff;
